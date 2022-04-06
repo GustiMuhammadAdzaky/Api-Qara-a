@@ -23,6 +23,10 @@ class Podcast extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'voice_url' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ],
             'category' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
@@ -31,10 +35,14 @@ class Podcast extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'created_date' => [
+            'image_url' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            'created_at' => [
                 'type' => 'DATETIME',
             ],
-            'updated_date' => [
+            'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],

@@ -8,9 +8,9 @@ class PodcastModel extends Model
 {
     protected $table = 'podcast';
     protected $primaryKey = 'id';
-    protected $returnType = 'App\Entities\Podcast';
+    protected $returnType = 'array';
     protected $allowedFields = [
-        'title', 'voice', 'category', 'image',
+        'title', 'voice', 'voice_url', 'category', 'image', 'image_url',
     ];
     protected $useTimestamps = false;
 

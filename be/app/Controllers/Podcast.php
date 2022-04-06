@@ -2,16 +2,36 @@
 
 namespace App\Controllers;
 
-// use App\Controllers\BaseController;
-use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\BaseController;
+use App\Models\PodcastModel;
 
-class Podcast extends ResourceController
+class Podcast extends BaseController
 {
-    protected $modelName = "App\Models\PodcastModel";
-    protected $format = "json";
+    protected $podcastModel;
+
+    public function __construct()
+    {
+        $this->podcastModel = new PodcastModel();
+    }
 
     public function index()
     {
-        return $this->respond($this->model->findAll());
+        $data = [
+            'podcast' => $this->podcastModel->findAll(),
+        ];
+
+        // dd($this->podcastModel->findAll());
+        return view('podcast/index', $data);
     }
+
+    public function create()
+    {
+        return view('podcast/create');
+    }
+
+    public function save()
+    {
+        # code...
+    }
+
 }
